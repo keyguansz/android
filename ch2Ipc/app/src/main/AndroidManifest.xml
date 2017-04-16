@@ -80,7 +80,13 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".messenger.MessengerActivity2"
+            android:label="@string/title_activity_messenger" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <service
             android:name=".messenger.MessengerService"
             android:process=":remote" >

@@ -10,6 +10,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="open activity B" />
+    <Button
+        android:id="@+id/write_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="write_btn" />
+    <Button
+        android:id="@+id/read_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="read_btn" />
+    <Button
+        android:id="@+id/send_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send_btn" />
 
     <EditText
         android:id="@+id/editText1"
