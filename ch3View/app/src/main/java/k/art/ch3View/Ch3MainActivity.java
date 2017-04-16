@@ -1,21 +1,23 @@
-package com.example.key.ch3view;
+package k.art.ch3View;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
 
+
 import java.util.Timer;
 import java.util.TimerTask;
 
+import k.art.R;
+import k.core.util.KLogUtil;
+
 //http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2012/1117/574.html
-public class MainActivity extends Activity {
-    private final String TAG = "MainActivity";
+public class Ch3MainActivity extends Activity {
+    private final String TAG = "Ch3MainActivity";
 
     private TextView mInfoTv;
     private VelocityTracker mVelocityTracker;
@@ -23,11 +25,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.act_ch3main);
         mInfoTv = (TextView) findViewById(R.id.info_tv);
         mVelocityTracker = VelocityTracker.obtain();
         int i = ViewConfiguration.get(getApplicationContext()).getScaledTouchSlop();
-        Log.e(TAG, "onCreate: getScaledTouchSlop="+ i );//24
+        KLogUtil.D(TAG, "onCreate", "getScaledTouchSlop="+ i );//24
         mInfoTv.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -41,11 +43,10 @@ public class MainActivity extends Activity {
                 mVelocityTracker.computeCurrentVelocity(5000);
                 int xV = (int)mVelocityTracker.getXVelocity();
                 int yV = (int)mVelocityTracker.getYVelocity();
-                Log.e(TAG, "onTouch: xV="+ xV+",yV="+ yV);
+                KLogUtil.D(TAG, "onTouch", ": xV="+ xV+",yV="+ yV );//24
             }
       };
         Timer timer =  new Timer();
         timer.schedule(timerTask,200,1000);
-
     }
 }
