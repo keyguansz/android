@@ -2,8 +2,6 @@ package k.art;
 
 
 import android.app.Application;
-import android.content.Context;
-import android.content.res.Configuration;
 
 import k.core.util.KDimenUtil;
 
@@ -24,12 +22,4 @@ public class KApplication extends Application {
 
     }
 
-    public void onTerminate() {
-
-
-    }
-
-    public void onConfigurationChanged(Configuration newConfig) {
-
-    }
 }
